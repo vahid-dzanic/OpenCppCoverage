@@ -32,8 +32,6 @@
 #include "ProtoBuff.hpp"
 #include "../InvalidOutputFileException.hpp"
 
-namespace pb = ProtoBuff;
-
 namespace Exporter
 {
 	namespace
@@ -41,7 +39,7 @@ namespace Exporter
 		//---------------------------------------------------------------------
 		void InitializeProtoBuffFrom(
 			const Plugin::FileCoverage& file,
-			pb::FileCoverage& fileProtoBuff)
+			ProtoBuff::FileCoverage& fileProtoBuff)
 		{
 			fileProtoBuff.set_path(Tools::ToUtf8String(file.GetPath().wstring()));
 
@@ -57,7 +55,7 @@ namespace Exporter
 		//---------------------------------------------------------------------
 		void InitializeModuleProtoBuffFrom(
 			const Plugin::ModuleCoverage& module,
-			pb::ModuleCoverage& moduleProtoBuff)
+			ProtoBuff::ModuleCoverage& moduleProtoBuff)
 		{
 			moduleProtoBuff.set_path(Tools::ToUtf8String(module.GetPath().wstring()));
 			
@@ -71,7 +69,7 @@ namespace Exporter
 		//---------------------------------------------------------------------
 		void FillCoverageDataProtoBuffFrom(
 			const Plugin::CoverageData& coverageData,
-			pb::CoverageData& coverageDataProtoBuff)
+			ProtoBuff::CoverageData& coverageDataProtoBuff)
 		{
 			coverageDataProtoBuff.set_name(Tools::ToUtf8String(coverageData.GetName()));
 			coverageDataProtoBuff.set_exitcode(coverageData.GetExitCode());
@@ -97,7 +95,7 @@ namespace Exporter
 		const Plugin::CoverageData& coverageData,
 		const std::filesystem::path& output) const
 	{		
-		pb::CoverageData coverageDataProtoBuff;
+		ProtoBuff::CoverageData coverageDataProtoBuff;
 		Tools::CreateParentFolderIfNeeded(output);
 
 		std::ofstream ofs(output.string(), std::ios::binary);
@@ -116,7 +114,7 @@ namespace Exporter
 		// See https://developers.google.com/protocol-buffers/docs/techniques#large-data
 		for (const auto& module : coverageData.GetModules())
 		{
-			pb::ModuleCoverage moduleProtoBuff;
+			ProtoBuff::ModuleCoverage moduleProtoBuff;
 			InitializeModuleProtoBuffFrom(*module, moduleProtoBuff);
 
 			WriteMessage(moduleProtoBuff, codedOutputStream);
