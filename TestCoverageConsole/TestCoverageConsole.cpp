@@ -27,7 +27,7 @@
 #include "TestCoverageConsole.hpp"
 #include "TestBasic.hpp"
 #include "TestThread.hpp"
-#include "FileWithSpecialCharéàè.hpp"
+// #include "FileWithSpecialCharéàè.hpp"
 #include "TestDiff.hpp"
 
 namespace
@@ -82,7 +82,8 @@ int _tmain(int argc, _TCHAR* argv[])
 		else if (type == TestCoverageConsole::TestSpecialLineInfo)
 			TestCoverageConsole::SpecialLineInfo();
 		else if (false) // to have GetFileWithSpecialChars symbol in release.
-			TestCoverageConsole::GetFileWithSpecialChars();
+			// TestCoverageConsole::GetFileWithSpecialChars();
+			{}
 		else if (type == TestCoverageConsole::TestUnloadReloadDll)
 			TestCoverageConsole::UnloadReloadDll();
 		else if (type == TestCoverageConsole::TestDiff)

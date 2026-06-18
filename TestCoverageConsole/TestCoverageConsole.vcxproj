@@ -159,7 +159,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FileWithSpecialCharéàè.hpp" />
+    <!-- <ClInclude Include="FileWithSpecialCharéàè.hpp" /> -->
     <ClInclude Include="TestBasic.hpp" />
     <ClInclude Include="TestCoverageConsole.hpp" />
     <ClInclude Include="SpecialLineInfo.hpp" />

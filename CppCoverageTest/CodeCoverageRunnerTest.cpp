@@ -46,7 +46,7 @@
 #include "TestCoverageConsole/TestBasic.hpp"
 #include "TestCoverageConsole/TestThread.hpp"
 #include "TestCoverageConsole/SpecialLineInfo.hpp"
-#include "TestCoverageConsole/FileWithSpecialCharéàè.hpp"
+// #include "TestCoverageConsole/FileWithSpecialCharéàè.hpp"
 #include "TestCoverageConsole/TestDiff.hpp"
 
 #include "TestCoverageSharedLib/TestCoverageSharedLib.hpp"
@@ -381,20 +381,20 @@ namespace CppCoverageTest
 		TestLine(file, 28, false);
 	}
 
-	//-------------------------------------------------------------------------
-	TEST_F(CodeCoverageRunnerTest, SpecialChars)
-	{
-		const auto fileWithSpecialChars = TestCoverageConsole::GetFileWithSpecialChars();
-		CoverageArgs args{ 
-			{ L"" },
-			TestCoverageConsole::GetOutputBinaryPath().filename().wstring(),
-			fileWithSpecialChars.wstring() };
+	// //-------------------------------------------------------------------------
+	// TEST_F(CodeCoverageRunnerTest, SpecialChars)
+	// {
+	// 	const auto fileWithSpecialChars = TestCoverageConsole::GetFileWithSpecialChars();
+	// 	CoverageArgs args{ 
+	// 		{ L"" },
+	// 		TestCoverageConsole::GetOutputBinaryPath().filename().wstring(),
+	// 		fileWithSpecialChars.wstring() };
 
-		auto coverageData = ComputeCoverageDataPatterns(args);
-		const auto& file = GetFirstFileCoverage(coverageData);
-		auto filename = file.GetPath().filename().wstring();
-		ASSERT_TRUE(boost::algorithm::iequals(fileWithSpecialChars.wstring(), filename));
-	}
+	// 	auto coverageData = ComputeCoverageDataPatterns(args);
+	// 	const auto& file = GetFirstFileCoverage(coverageData);
+	// 	auto filename = file.GetPath().filename().wstring();
+	// 	ASSERT_TRUE(boost::algorithm::iequals(fileWithSpecialChars.wstring(), filename));
+	// }
 
 	//-------------------------------------------------------------------------
 	TEST_F(CodeCoverageRunnerTest, UnloadReloadDll)

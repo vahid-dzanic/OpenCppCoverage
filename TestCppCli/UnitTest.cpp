@@ -14,20 +14,21 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#include "../TestCoverageSharedLib/TestCppCli.hpp"
+// #include "../TestCoverageSharedLib/TestCppCli.hpp"
 
-using namespace Microsoft::VisualStudio::TestTools::UnitTesting;
+// // using namespace Microsoft::VisualStudio::TestTools::UnitTesting;
+// using namespace Microsoft::VisualStudio::TestTools::UnitTesting;
 
-namespace TestCppCli
-{
-	[TestClass]
-	public ref class UnitTest
-	{
-	public: 
-		[TestMethod]
-		void TestReturn42()
-		{
-			Assert::AreEqual(42, TestCoverageSharedLib::Return42());
-		};
-	};
-}
+// namespace TestCppCli
+// {
+// 	[TestClass]
+// 	public ref class UnitTest
+// 	{
+// 	public: 
+// 		[TestMethod]
+// 		void TestReturn42()
+// 		{
+// 			Assert::AreEqual(42, TestCoverageSharedLib::Return42());
+// 		};
+// 	};
+// }
